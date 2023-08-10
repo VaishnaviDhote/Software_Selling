@@ -1,0 +1,93 @@
+
+{% include "header.html" %}
+
+{% include "adminnavbar.html" %}
+
+ <style>
+            #customers {
+              font-family: Arial, Helvetica, sans-serif;
+              border-collapse: collapse;
+              width: 90%;
+            }
+
+            #customers td, #customers th {
+              border: 1px solid #ddd;
+              padding: 8px;
+            }
+
+            #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+            #customers tr:hover {background-color: #ddd;}
+
+            #customers th {
+              padding-top: 12px;
+              padding-bottom: 12px;
+              text-align: left;
+              background-color: #04AA6D;
+              color: white;
+            }
+ </style>
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center py-5">
+            <h1 class="display-3 text-white mb-4 animated slideInDown">USER </h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"> User List</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- project Start -->
+		<center>
+		<div style="width:90%">
+            <h2 class="title">
+							<center><a href="#"> Register User List </a></center>
+							</h2>
+
+							<hr color="Orange">
+
+            <table id="customers">
+              <tr>
+                  <th>User Id</th>
+                <th>Username</th>
+                <th>Email Id</th>
+                <th>Password</th>
+                <th>View</th>
+              </tr>
+
+                {% for n in userlist %}
+
+              <tr>
+                <td>{{n.id}}</td>
+                <td>{{n.username}}</td>
+                <td>{{n.email}}</td>
+                <td>{{n.password}}</td>
+                <td><a href="#"> <img src="/static/img/view.png" height="30px" width="30px" style="margin-left:10px;"> </a></td>
+              </tr>
+
+                {% endfor %}
+
+
+            </table>
+        </center>
+
+            </body>
+            </html>
+
+
+
+		</div>
+		</center>
+
+
+
+    <!-- project End -->
+
+{% include "footer.html" %}

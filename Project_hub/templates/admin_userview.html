@@ -1,0 +1,109 @@
+
+{% include "header.html" %}
+
+{% include "adminnavbar.html" %}
+
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center py-5">
+            <h1 class="display-3 text-white mb-4 animated slideInDown">USER </h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Update User</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- project Start -->
+
+    <center>
+		<div style="width:90%">
+            <h2 class="title">
+							<center><a href="#"> UPDATE USER!</a></center>
+							</h2>
+
+							<hr color="Orange">
+
+						<table class="table table-hover">
+
+								<form method="post" action="/adminuser-updatesuccess/{{userlist.created_user_id}}/">
+									{% csrf_token %}
+
+								<tr>
+									<td>User Id</td>
+									<td><input type="text" class="form-control" name="txtid" placeholder="Enter The User Id" value="{{userlist.created_user_id}}"> </td>
+								</tr>
+
+								<tr>
+									<td>User Name</td>
+									<td><input type="text" class="form-control" name="txtfname" placeholder="Enter The User Name" value="{{userlist.user_name}}"> </td>
+								</tr>
+
+								<tr>
+									<td>Email Id</td>
+									<td><input type="text" class="form-control" name="txtemail" placeholder="Enter the Email Id" value="{{userlist.user_email}}"> </td>
+								</tr>
+
+								<tr>
+									<td>Gender</td>
+									<td><input type="radio" name="txtgender" value="{{userlist.user_gender}}">Male
+										<input  type="radio" name="txtgender" value="{{userlist.user_gender}}">Female
+									</td>
+								</tr>
+
+								<tr>
+									<td>Address</td>
+									<td><input type="Number" class="form-control" name="txtaddress" placeholder="Enter your Address" maxlength="2" value="{{userlist.user_address}}"> </td>
+								</tr>
+
+
+
+								<tr>
+									<td>Username</td>
+									<td><input type="text" class="form-control" name="txtusername" placeholder="Enter the Username" value="{{userlist.user_username}}"> </td>
+								</tr>
+
+								<tr>
+									<td>Password</td>
+									<td><input type="text" class="form-control" name="txtpassword" placeholder="Enter the Password" value="{{userlist.user_password}}"> </td>
+								</tr>
+
+
+
+								<tr>
+									<td> </td>
+									<td><input type="Submit" class="btn btn-success" name="btnsubmit" value="Update">
+
+									</td>
+								</tr>
+							</form>
+
+								<tr>
+									<td> </td>
+									<td>
+										<form method="post" action="/adminuser-deletesuccess/{{userlist.created_user_id}}/">
+											{% csrf_token %}
+											<input type="Submit" class="btn btn-danger" name="btnsubmit" value="Delete">
+										</form>
+									</td>
+								</tr>
+
+							</table>
+		</div>
+		</center>
+
+
+
+
+
+
+    <!-- project End -->
+
+{% include "footer.html" %}

@@ -1,0 +1,93 @@
+
+{% include "header.html" %}
+
+{% include "adminnavbar.html" %}
+
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center py-5">
+            <h1 class="display-3 text-white mb-4 animated slideInDown">Client </h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Client List</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- project Start -->
+  <!DOCTYPE html>
+            <html>
+            <head>
+            <style>
+            #customers {
+              font-family: Arial, Helvetica, sans-serif;
+              border-collapse: collapse;
+              width: 90%;
+            }
+
+            #customers td, #customers th {
+              border: 1px solid #ddd;
+              padding: 8px;
+            }
+
+            #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+            #customers tr:hover {background-color: #ddd;}
+
+            #customers th {
+              padding-top: 12px;
+              padding-bottom: 12px;
+              text-align: left;
+              background-color: #04AA6D;
+              color: white;
+            }
+            </style>
+            </head>
+            <body>
+
+
+  <center>
+                <h1> Client List </h1>
+                <br>
+
+            <table id="customers">
+              <tr>
+                  <th>Client Id</th>
+                <th>Client Name</th>
+                <th>Contact</th>
+                <th>Project Name</th>
+                <th>View</th>
+              </tr>
+
+                {% for n in clientlist %}
+
+              <tr>
+                <td>{{n.client_id}}</td>
+                <td>{{n.client_name}}</td>
+                <td>{{n.client_mobile}}</td>
+                <td>{{n.client_projectname}}</td>
+                <td><a href="/adminclient-view/{{n.client_id}}/"> <img src="/static/img/view.png" height="30px" width="30px" style="margin-left:10px;"> </a></td>
+              </tr>
+
+                {% endfor %}
+
+
+            </table>
+                </center>
+
+            </body>
+            </html>
+
+
+
+
+    <!-- project End -->
+
+{% include "footer.html" %}

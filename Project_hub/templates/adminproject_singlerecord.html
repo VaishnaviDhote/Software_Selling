@@ -1,0 +1,158 @@
+
+{% include "header.html" %}
+
+{% include "adminnavbar.html" %}
+
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center py-5">
+            <h1 class="display-3 text-white mb-4 animated slideInDown">Project </h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"> Add Project</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- project Start -->
+		<center>
+		<div style="width:90%">
+            <h2 class="title">
+							<center><a href="#"> Show Project Record</a></center>
+							</h2>
+
+							<hr color="Orange">
+
+
+							<table class="table table-hover">
+
+								<form method="post" action="/adminupdate-prosuccess/{{projectlist.project_id}}/">
+									     {% csrf_token %}
+
+                              	 <tr>
+									<td>Username</td>
+									<td><input type="text" class="form-control" name="txtusername" placeholder="Enter the Username" value="{{projectlist.project_username}}"> </td>
+								</tr>
+
+
+								<tr>
+									<td>Project Id</td>
+									<td><input type="text" class="form-control" name="txtprojectid" placeholder="Enter the ProjectId" value="{{projectlist.project_id}}"> </td>
+								</tr>
+
+								<tr>
+									<td>Project Name</td>
+									<td><input type="text" class="form-control" name="txtprojectname" placeholder="Enter the Project Name" value="{{projectlist.project_name}}"> </td>
+								</tr>
+
+								<tr>
+									<td>Client Name</td>
+									<td><input type="text" class="form-control" name="txtclientname" placeholder="Enter the Client Name" value="{{projectlist.project_clientname}}"> </td>
+								</tr>
+
+								<tr>
+									<td>Technology</td>
+									<td><input type="text" class="form-control" name="txttechnology" placeholder="Enter the Technology" value="{{projectlist.project_technology}}"> </td>
+								</tr>
+
+								<tr>
+									<td>Team</td>
+									<td><input type="text" class="form-control" name="txtteam" placeholder="Enter the Team Name" value="{{projectlist.project_team}}"> </td>
+								</tr>
+
+								<tr>
+									<td>Project Info</td>
+									<td> <textarea class="form-control" id="exampleFormControlTextarea1" name="txtprojectinfo" rows="3" > {{projectlist.project_info}} </textarea></td>
+								</tr>
+
+								<tr>
+									<td>Project Type </td>
+									<td>
+										<select name="txtprojecttype" id="type" class="form-control" value="{{projectlist.project_type}}">
+											<option>Website</option>
+											<option>Software</option>
+											<option>App</option>
+										</select>
+									</td>
+								</tr>
+
+								<tr>
+									<td> Upload Image </td>
+									<td><input type="file" class="form-control" name="projectimg" accept="image/png, image/jpeg" value="{{projectlist.project_image}}"> </td>
+								</tr>
+
+								<tr>
+									<td>Project Link</td>
+									<td><input type="text" class="form-control" name="txtlink" placeholder="Enter the Project Link" value="{{projectlist.project_link}}"> </td>
+								</tr>
+
+								<tr>
+									<td>Software Licence Start Date</td>
+									<td><input type="date" class="form-control" name="txtdatestart" value="{{projectlist.project_startdate}}"></td>
+								</tr>
+
+								<tr>
+									<td>Software Licence Expiry Date</td>
+									<td><input type="date" class="form-control" name="txtdateend" value="{{projectlist.project_enddate}}"></td>
+								</tr>
+
+								<tr>
+									<td>Software Lience Validity</td>
+									<td>
+										<select name="txtyear" id="txtyear"  class="form-control" value="{{projectlist.project_validity}}">
+											<option>1 Year</option>
+											<option>2 Year</option>
+											<option>3 Year</option>
+										</select>
+									</td>
+								</tr>
+
+								<tr>
+									<td> Developing Project Cost</td>
+									<td><input type="number" class="form-control" name="txtcostdev" placeholder="Enter the project Renewal cost" value="{{projectlist.project_dcost}}"> </td>
+
+								</tr>
+
+								<tr>
+									<td>Renewal Project Cost</td>
+									<td><input type="number" class="form-control" name="txtcostren" placeholder="Enter the project developement cost" value="{{projectlist.project_rcost}}"> </td>
+
+								</tr>
+
+								<tr>
+									<td> </td>
+									<td>
+										<input type="Submit" class="btn btn-success" value="Update">
+									</td>
+								</tr>
+
+								</form>
+
+								<tr>
+									<td> </td>
+									<td>
+										<form method="post" action="/adminproject-delete/{{projectlist.project_id}}/">
+											{% csrf_token %}
+											<input type="Submit" class="btn btn-danger" value="Delete">
+										</form>
+									</td>
+								</tr>
+
+							</table>
+
+
+		</div>
+		</center>
+
+
+
+    <!-- project End -->
+
+{% include "footer.html" %}

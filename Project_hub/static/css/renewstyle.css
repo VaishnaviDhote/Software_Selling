@@ -1,0 +1,39 @@
+*
+{
+    background-color:;
+}
+.box{
+    padding: 8px 0;
+    margin: 12px 22px;
+    min-width: 20vw;
+    border: 2px solid rgb(120, 54, 16);
+    border-radius: 8px;
+    text-align: center;
+    width:300px;
+}
+
+.box h2{
+    font-size: 2rem;
+    padding: 15px 0;
+}
+
+.highlighted{
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+
+.box ul{
+    list-style-type: none;
+}
+
+.box ul li{
+   margin: 12px 2px;
+}
+
+#con_main_box
+{
+    width:90%;
+    display:flex;
+    background-color:;
+    justify-content: center;
+}

@@ -1,0 +1,119 @@
+
+{% include "header.html" %}
+
+{% include "adminnavbar.html" %}
+
+
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center py-5">
+            <h1 class="display-3 text-white mb-4 animated slideInDown">Client </h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Client</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- project Start -->
+
+    <center>
+		<div style="width:90%">
+            <h2 class="title">
+							<center><a href="#"> View CLIENT!</a></center>
+							</h2>
+
+							<hr color="Orange">
+
+
+
+							<table class="table table-hover">
+
+								<form method="post" action="/adminupdate-clientsuccess/{{clientlist.client_id}}/">
+									{% csrf_token %}
+
+								<tr>
+									<td>Client Id</td>
+									<td><input type="text" class="form-control" name="txtclientid" placeholder="Enter The Client Id" value="{{clientlist.client_id}}"> </td>
+								</tr>
+
+								<tr>
+									<td>Client Name</td>
+									<td><input type="text" class="form-control" name="txtclientname" placeholder="Enter The Client Name" value="{{clientlist.client_name}}"> </td>
+								</tr>
+
+								<tr>
+									<td>Gender</td>
+									<td><input type="radio" name="gender" value="{{clientlist.client_gender}}">Male
+										<input  type="radio" name="gender" value="{{clientlist.client_gender}}">Female
+									</td>
+								</tr>
+
+								<tr>
+									<td>Mobile Number </td>
+									<td><input type="Number" class="form-control" name="txtmobilenumber" placeholder="Enter your mobile number" maxlength="2" value="{{clientlist.client_mobile}}"> </td>
+								</tr>
+
+								<tr>
+									<td>Email Id</td>
+									<td><input type="text" class="form-control" name="txtemailid" placeholder="Enter the Email Id" value="{{clientlist.client_email}}"> </td>
+								</tr>
+
+								<tr>
+									<td>About</td>
+									<td><input type="text" class="form-control" name="txtabout" placeholder="Enter the Bio" value="{{clientlist.client_about}}"> </td>
+								</tr>
+
+								<tr>
+									<td>Project Name</td>
+									<td><input type="text" class="form-control" name="txtprojectname" placeholder="Enter the Project Name" value="{{clientlist.client_projectname}}"> </td>
+								</tr>
+
+								<tr>
+									<td> Client Image </td>
+									<td><input type="file" class="form-control" name="image" accept="image/png, image/jpeg" value="{{clientlist.client_img}}"> </td>
+								</tr>
+
+								<tr>
+									<td>Linkedin Link</td>
+									<td><input type="text" class="form-control" name="txtlink" placeholder="Enter the Linkedin Link" value="{{clientlist.client_link}}"> </td>
+								</tr>
+
+								<tr>
+									<td> </td>
+									<td><input type="Submit" class="btn btn-success" name="btnsubmit" value="Update">
+
+									</td>
+								</tr>
+							</form>
+
+								<tr>
+									<td> </td>
+									<td>
+										<form method="post" action="/adminclient-delete/{{clientlist.client_id}}/">
+											{% csrf_token %}
+											<input type="Submit" class="btn btn-danger" name="btnsubmit" value="Delete">
+										</form>
+									</td>
+								</tr>
+
+							</table>
+
+		</div>
+		</center>
+
+
+
+
+
+
+    <!-- project End -->
+
+{% include "footer.html" %}
